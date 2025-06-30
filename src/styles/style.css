@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+  font-family: Poppins;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+app-bar {
+  display: block;
+  padding: 1rem;
+  background-color: #0c076e;
+  color: white;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+note-form {
+  display: block;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+form>* {
+  display: block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input,
+textarea,
+button {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+button {
+  background-color: #0e0881;
+  border-radius: 8px;
+  color: #f4f4f4;
+}
+
+button:hover {
+  cursor: pointer;
+  font-weight: 600;
+  background-color: #0c076e;
+}
+
+.note-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+note-item {
+  display: block;
+  padding: 1rem;
+  background: white;
+  border-left: 5px solid #0c076e;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+note-search {
+  display: block;
+  background: white;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#searchInput {
+  width: 100%;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 64px;
+  width: 100%;
+}
+
+.spinner-overlay {
+  position: fixed;           
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 1000;    
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(35, 35, 35, 0.08);
+  opacity: 0;
+  pointer-events: none;  
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+.spinner-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 5px solid #e3e6ef;
+  border-top: 5px solid #3474ff;
+  border-radius: 50%;
+  animation: spin 1s cubic-bezier(0.4,0,0.2,1) infinite;
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
